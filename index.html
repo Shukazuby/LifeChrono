@@ -53,14 +53,14 @@
       @media screen and (max-width: 1284px) {
         #container {
         width:600px;
-        height: 200px;
+        max-height: 300px;
         align-content:center ;
-        padding: 20px;
+        padding: 30px;
         border-radius: 5px 100px 5px 100px;
       }
-      }
+
       p {
-        font-size: 16px;
+        font-size: 18px;
       }
       input {
         padding: 10px;
@@ -68,7 +68,12 @@
         border-radius: 10%;
       }
       h1 {
-        font-size: 1.5em;
+        font-size: 2em;
+      }
+      #result {
+        margin-bottom: 20px;
+      }
+
       }
 
 
@@ -106,11 +111,12 @@
         if (years && months && days !== null) {
           document.getElementById(
             "result"
-          ).innerHTML = `You are ${years} years, ${months} months, and ${days} days on earth today.`;
+          ).innerHTML = `You are ${years} years, ${months} months, and 
+          ${days} days on earth today.`;
         } else {
           document.getElementById(
             "result"
-          ).innerHTML = `Input your date of birth`;
+          ).innerHTML = `Input your date[] of birth`;
         }
       }
     </script>
