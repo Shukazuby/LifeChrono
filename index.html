@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: ghostwhite;
+        }
+        #container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px 60px 10px 60px;
+            margin-top: 10rem;
+            background-color: rgb(205, 225, 255);
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 14px;
+        }
+        button{
+            background: black;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 10%;
+        }
+        p{
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            font-size: 12px;
+
+        }
+        input{
+            padding: 10px;
+            outline: none;
+        }
+        h1{
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Know how long you have been on earth</h1>
+        <p>Enter your birth day, month, and year</p><br>
+        <input type="date" id="birthdate" size="100">
+        <br><br>
+        <button onclick="calculateAge()">Know</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateAge() {
+            const birthDate = new Date(document.getElementById("birthdate").value);
+            const today = new Date();
+            
+            const ageInMilliseconds = today - birthDate;
+            const ageInSeconds = ageInMilliseconds / 1000;
+            const ageInMinutes = ageInSeconds / 60;
+            const ageInHours = ageInMinutes / 60;
+            const ageInDays = ageInHours / 24;
+            const ageInMonths = ageInDays / 30.44; // Average number of days in a month
+            const ageInYears = ageInMonths / 12;
+            
+            const years = Math.floor(ageInYears);
+            const months = Math.floor(ageInMonths % 12);
+            const days = Math.floor(ageInDays % 30.44); // Handle months of different lengths
+           
+            if((years) && (months) && (days) !== null){
+                document.getElementById("result").innerHTML = `Your are ${years} years, ${months} months, and ${days} days on earth today.`;
+            }else{
+                document.getElementById("result").innerHTML = `Input your date of birth`;
+            }
+        }
+    </script>
+</body>
+</html>
