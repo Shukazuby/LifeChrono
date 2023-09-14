@@ -22,12 +22,13 @@
         border-radius: 5px 60px 10px 60px;
         /* margin-top: 10rem; */
         background-color: rgb(205, 225, 255);
+        font-family:monospace;
       }
       #result {
         margin-top: 20px;
         font-weight: 700;
         font-style: italic;
-        font-size: 14px;
+        font-size: 18px;
         /* margin-bottom: 1rem; */
       }
       button {
@@ -48,37 +49,46 @@
         border-radius: 10%;
       }
       h1 {
-        font-size: 1.2em;
+        font-size: 2em;
       }
       @media screen and (max-width: 1284px) {
         #container {
-        width:800px;
-        max-height: 400px;
-        align-content:center ;
-        padding: 30px;
-        border-radius: 5px 100px 5px 100px;
-      }
+          width: 80%;
+          max-height: 100%;
+          align-content: center;
+          padding: 30px;
+          border-radius: 5px 100px 5px 100px;
+        }
 
-      p {
-        font-size: 18px;
+        p {
+          font-size: 18px;
+        }
+        input {
+          padding: 15px 5px;
+          outline: none;
+          border-radius: 10%;
+          width: 80%;
+          text-align: center;
+          font-size: 1em;
+        }
+        h1 {
+          font-size: 2em;
+        }
+        #result {
+          margin-bottom: 20px;
+          font-size: 20px;
+        }
+        button {
+          padding: 10px 30px;
+          font-size: 16px;
+        }
       }
-      input {
-        padding: 10px 50px;
-        outline: none;
-        border-radius: 10%;
+      /* @media screen and (max-width: 1000px) {
+        h1 {
+          font-size: 1.5em;
 
-      }
-      h1 {
-        font-size: 2em;
-      }
-      #result {
-        margin-bottom: 20px;
-        font-size: 30px;
-      }
-
-      }
-
-
+        }
+      } */
     </style>
   </head>
   <body>
@@ -113,8 +123,9 @@
         if (years && months && days !== null) {
           document.getElementById(
             "result"
-          ).innerHTML = `You are ${years} years, ${months} months, and 
-          ${days} days on earth today.`;
+          ).innerHTML = `You are ${years} years, <br>
+           ${months} months, and <br>
+             ${days} days on earth today.`;
         } else {
           document.getElementById(
             "result"
